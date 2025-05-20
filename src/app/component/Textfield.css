@@ -1,0 +1,76 @@
+.textfield .container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+}
+
+.textfield label {
+  color: var(--slate500Color);
+  font-weight: 500;
+  
+}
+
+.textfield .form-control {
+  outline: none;
+  border: 1px solid var(--slate500Color40);
+  border-radius: 5px;
+  color: var(--slate700Color);
+  font-size: 12px;
+}
+
+.textfield input {
+  width: 100% !important;
+}
+
+.textfield .form-control:focus {
+  box-shadow: none;
+}
+
+.textfield input:focus {
+  border-color: var(--primaryColor);
+}
+
+.textfield .paddingforIcon {
+  padding-left: 40px !important;
+}
+
+.textfield .paddingforIcon-sm {
+  padding-left: 36px !important;
+}
+
+.textfield .form-icon {
+  position: absolute;
+  top: 22px;
+  bottom: 0;
+  left: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+/* .textfield .form-control-sm {
+  padding: 0.25rem 0.5rem !important;
+} */
+
+.required::after {
+  content: "*";
+  margin-left: 2px;
+  color: #ed3339;
+}
+
+.material-textfield {
+  position: relative;
+}
+
+input::placeholder
+{
+  color: rgb(156, 156, 156) !important;
+}
+label
+{
+  color: rgb(129, 128, 128) !important;
+}

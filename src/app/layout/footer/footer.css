@@ -1,0 +1,18 @@
+.footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #ffffff !important;
+    padding: 7px 0px;
+    /* color: black; */
+    text-align: center;
+    height: 30px;
+    /* z-index: -10 !important; */
+  }
+  .footer-p{
+    color: black;
+    float: inline-end;
+    /* padding-right: 30px !important; */
+  
+    
+  }

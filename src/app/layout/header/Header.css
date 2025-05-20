@@ -1,0 +1,149 @@
+.header {
+  background-color: var(--ComponentBgColor);
+  box-shadow: 0px 0px 1px rgba(40, 41, 61, 0.08),
+    0px 0.5px 2px rgba(96, 97, 112, 0.16);
+  padding: 12px 10px;
+  display: flex;
+  position: fixed;
+  width: calc(100% - 200px);
+  /* width: calc(100% - 230px); */
+  z-index: 99;
+  top: 0;
+}
+
+.header-left,
+.header-right {
+  display: flex;
+  align-items: center;
+}
+
+.dark-icon,
+.message-icon,
+.notification-icon,
+.sidebar-open-icon {
+  width: 34px;
+  height: 34px;
+  background-color: var(--slate500Color20);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  margin: 0 5px;
+  transition: background-color 0.2s ease-in;
+  cursor: pointer;
+}
+
+.header-right {
+  align-items: center;
+  margin-left: auto;
+}
+
+.profile-icon img {
+  width: 34px;
+  height: 34px;
+  border-radius: 999999px;
+}
+
+.profile-icon {
+  margin-left: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+/* ---------------------------- */
+/* Profile start */
+/* ---------------------------- */
+
+
+
+.profile-menu-section {
+  background-color: var(--ComponentBgColor);
+  width: 300px !important;
+  box-shadow: 0 1px 6px #00000033;
+  position: fixed;
+  border-radius: 10px; 
+  top: 64px;
+  right: 12px;
+  animation: scaleZ 300ms ease-in-out forwards !important;
+  z-index: 999;
+
+}
+
+
+
+.profile-menu-section,
+.filter-menu-section {
+  background-color: var(--ComponentBgColor);
+  width: 300px;
+  box-shadow: 0 1px 6px #00000033;
+  position: fixed;
+  border-radius: 10px;
+  top: 64px;
+  /* right: 12px; */
+
+  animation: scaleZ 300ms ease-in-out forwards;
+  z-index: 999;
+}
+
+.filter-menu-section {
+  top: 152px !important;
+  right: 21px !important;
+}
+
+.MobileProfile-section {
+  right: 18px;
+  width: calc(100% - 40px);
+}
+
+.profile-details {
+  padding: 15px;
+}
+
+.ProfileMenu-img,
+.ProfileHeader-icon {
+  width: 60px;
+  height: 60px;
+  background-color: var(--primaryColor40);
+  color: var(--primaryColor);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+}
+
+.ProfileHeader-icon {
+  width: 34px !important;
+  height: 34px !important;
+  font-size: 15px !important;
+}
+
+.profile-menu {
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  border-radius: 5px;
+  margin: 10px;
+  cursor: pointer;
+}
+
+.profile-menu:hover {
+  background-color: var(--primaryColor40) !important;
+}
+
+.profile-menu:hover svg,
+.profile-menu:hover div {
+  color: var(--primaryColor) !important;
+}
+
+.profile-menu:nth-child(3):hover {
+  background-color: var(--dangerColor40);
+}
+
+
+
+
+
+/* /////// Side bar Css ////// */
+
+
