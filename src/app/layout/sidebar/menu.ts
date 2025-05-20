@@ -298,6 +298,6 @@ export const menuItems = [
   {
     title: "Logout",
     icon: "heroicons-outline:logout",
-    link: "logout",
+    link: "/",
   },
 ];

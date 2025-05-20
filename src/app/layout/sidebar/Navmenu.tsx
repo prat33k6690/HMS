@@ -60,7 +60,6 @@ const Navmenu: React.FC<NavmenuProps> = ({ menus }) => {
     document.title = `Dashcode | ${locationName}`;
     setActiveSubmenu(submenuIndex);
 
-    // dispatch(toggleActiveChat(false)); // Uncomment if needed
 
     if (mobileMenu) {
       setMobileMenu(false);
@@ -72,7 +71,7 @@ const Navmenu: React.FC<NavmenuProps> = ({ menus }) => {
       <div>
         <img className="w-60 mx-4 mt-2" src={logo} alt="image" />
       </div>
-      <ul>
+      <ul className="overflow-scroll h-95">
         {menus.map((item, i) => (
           <li
             key={i}
@@ -101,7 +100,7 @@ const Navmenu: React.FC<NavmenuProps> = ({ menus }) => {
             {item.child && (
               <div
                 className={`menu-link d-flex justify-content-between align-items-center px-2 py-2 cursor-pointer ${activeSubmenu === i
-                  ? "parent_active not-collapsed bg-light"
+                  ? "parent_active not-collapsed background-light"
                   : "collapsed"
                   }`}
                 onClick={() => toggleSubmenu(i)}

@@ -51,29 +51,26 @@ const Layout: React.FC = () => {
   return (
     <>
       <ToastContainer />
-      <Container fluid className="p-0">
-        <Header setIsMenuBar={setIsMenuBar} />
-      </Container>
-      {menuType === "vertical" && width > breakpoints.xl && !menuHidden && (
-        <Sidebar
-        />
-      )}
-      {width < breakpoints.xl && mobileMenu && (
+      <Header setIsMenuBar={setIsMenuBar} />
+
+      <Sidebar
+      />
+      <div
+        className={`${width >= 875 && isMenuBar ? "main-Container" : "full-container"
+          }  `}
+      >
         <div
-          className="overlay bg-slate-900/50 backdrop-filter backdrop-blur-sm opacity-100 fixed inset-0 z-[999]"
-          onClick={() => setMobileMenu(false)}></div>
-      )}
-      <div className={`content-wrapper transition-all duration-150 ${width > 1280 ? switchHeaderClass() : ""}`} >
-        <div className="page-content page-min-height">
-          <div
-            className={contentWidth === "boxed" ? "container mx-auto" : "container-fluid"}>
-            <Outlet />
-          </div>
+          className={`Screens-Container position-relative hideScroll p-4 ${width <= 875 && "mx-2"
+            } "screen-container-0 `} style={{
+              height: "88vh",
+              overflowY: "scroll",
+            }}
+        >
+          <Outlet/>
         </div>
-      </div>
-      {width > breakpoints.md && (
         <Footer />
-      )}
+
+      </div>
     </>
   );
 };
