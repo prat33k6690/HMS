@@ -1,6 +1,9 @@
 import React, { useRef, useEffect, useState } from "react";
 import Navmenu from "./Navmenu";
 import { menuItems } from "./menu";
+import { BiMenuAltLeft } from "react-icons/bi";
+import { handleSidebar } from "../../redux/reducers/layout";
+import Header from "../header/Header";
 
 // Hook to manage sidebar collapse
 const useSidebar = (): [
@@ -26,7 +29,23 @@ const useSkin = (): [string, React.Dispatch<React.SetStateAction<string>>] => {
   return [skin, setSkin];
 };
 
+type Breakpoints = {
+  sm: number;
+  md: number;
+  lg: number;
+  xl: number;
+  [key: string]: number;
+};
+
+const breakpoints: Breakpoints = {
+  sm: 640,
+  md: 768,
+  lg: 1024,
+  xl: 1280,
+};
+
 const Sidebar: React.FC = () => {
+  const [width, setWidth] = useState<number>(window.innerWidth);
   const scrollableNodeRef = useRef<HTMLDivElement | null>(null);
   const [scroll, setScroll] = useState<boolean>(false);
   const [collapsed, setMenuCollapsed] = useSidebar();
@@ -50,7 +69,6 @@ const Sidebar: React.FC = () => {
     if (node) {
       node.addEventListener("scroll", handleScroll);
     }
-
     return () => {
       if (node) {
         node.removeEventListener("scroll", handleScroll);
@@ -58,16 +76,47 @@ const Sidebar: React.FC = () => {
     };
   }, []);
 
+  useEffect(() => {
+    const handleResize = () => {
+      const currentWidth = window.innerWidth;
+      setWidth(currentWidth);
+
+      if (currentWidth <= breakpoints.md) {
+        setMenuCollapsed(true); // Collapse
+      } else {
+        setMenuCollapsed(false); // Expand when resizing back
+      }
+    };
+
+    window.addEventListener("resize", handleResize);
+    handleResize(); // Run once on mount
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   return (
     <div className={isSemiDark ? "dark" : ""}>
+      <Header
+        setIsMenuBar={""}
+        collapsed={collapsed}
+        toggleSidebar={() => setMenuCollapsed((prev: boolean) => !prev)}
+        width={width}
+      />
+
+
       <div
-        className={`sidebar-wrapper bg-white dark:bg-slate-800
-          ${collapsed ? "w-[72px] close_sidebar" : "w-[248px]"}
-          ${menuHover ? "sidebar-hovered" : ""}
-          ${skin === "bordered"
+        className={`
+    sidebar-wrapper
+    ${collapsed ? "closed" : ""}
+    bg-white dark:bg-slate-800
+    ${menuHover ? "sidebar-hovered" : ""}
+    ${skin === "bordered"
             ? "border-r border-slate-200 dark:border-slate-700"
             : "shadow-base"
-          }`}
+          }
+  `}
         onMouseEnter={() => setMenuHover(true)}
         onMouseLeave={() => setMenuHover(false)}
       >

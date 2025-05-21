@@ -1,20 +1,25 @@
 import { useState, useRef, useEffect } from "react";
 import { Navbar } from "react-bootstrap";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import Profile from "./Profile";
 import { useSelector, useDispatch } from "react-redux";
-import { BiMenu, BiChevronDown } from "react-icons/bi";
-import productLogo from "../../assests/images/login/logo_api.png";
+import { BiMenu, BiChevronDown, BiMenuAltLeft } from "react-icons/bi";
+// import productLogo from "../../assests/images/login/logo_api.png";
+// import { handleSidebar } from "../../redux/reducers/layout";
 
 
 type headerProps = {
   setIsMenuBar: any
+  collapsed: boolean;
+  toggleSidebar: () => void;
+  width: number;
 }
-const Header = ({ setIsMenuBar }: headerProps) => {
+const Header = ({ setIsMenuBar, collapsed, toggleSidebar, width }: headerProps) => {
   // const notificationData = useSelector((state: any) => state.notification.notificationData)?.filter((data: any) => data.ReadStatus === "N");
   const [isProfile, setIsProfile] = useState(false);
   const profileRef: any = useRef(null);
   const profileIconRef: any = useRef(null);
+  const [isSidebar, setIsSidebar] = useState<boolean>(true);
   const [isNotificationOpen, setIsNotificationOpen] = useState<boolean>(false);
   const notificationRef: any = useRef<any>(null);
   const notificationIconRef: any = useRef<any>(null);
@@ -85,12 +90,15 @@ const Header = ({ setIsMenuBar }: headerProps) => {
 
   return (
     <>
-    
       <Navbar
-
         className="border-bottom w-100 bg-white justify-content-end position-sticky top-0"
         style={{ borderColor: 'rgb(203 213 225)', zIndex: 999 }}
       >
+        {width <= 768 && (
+          <div onClick={toggleSidebar} className="cursor-pointer text-2xl">
+            <BiMenuAltLeft />
+          </div>
+        )}
         <div className="ml-auto d-flex align-items-center">
           {/* <div
               className="header-icon mx-2 rounded-circle position-relative"

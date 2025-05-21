@@ -51,8 +51,6 @@ const Layout: React.FC = () => {
   return (
     <>
       <ToastContainer />
-      <Header setIsMenuBar={setIsMenuBar} />
-
       <Sidebar
       />
       <div
@@ -66,7 +64,7 @@ const Layout: React.FC = () => {
               overflowY: "scroll",
             }}
         >
-          <Outlet/>
+          <Outlet />
         </div>
         <Footer />
 

@@ -65,7 +65,7 @@ const Layout = ({ children, title, flag, data }: any) => {
                   <div className={`p-3 regitrasationFormContainer w-100 `}>
                     <div className="d-flex align-items-center justify-content-center gap-2">
                       <div>
-                        <img src={logo_api} style={{ width: 220 }} />
+                        <img title='image' src={logo_api} style={{ width: 220 }} />
                       </div>
                       <div className="login-logo-divider" />
                     </div>

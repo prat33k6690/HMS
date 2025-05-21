@@ -27,7 +27,7 @@ import { AiOutlineBank } from "react-icons/ai";
 import { CgProfile } from "react-icons/cg";
 import { TbLockPassword } from "react-icons/tb";
 const LoginLayout = lazy(() => import('../layout/Layout'));
-
+// import LoginLayout from '../layout/Layout'
 
 const Login = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -133,7 +133,6 @@ const Login = () => {
     getRegularCaptcha();
     removeLoginSession();
   }, []);
-
 
 
   return (

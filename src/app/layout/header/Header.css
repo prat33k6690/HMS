@@ -11,6 +11,18 @@
   top: 0;
 }
 
+.sidebar-wrapper2 {
+  position: fixed;
+  left: -201px;
+  top: 0;
+  height: 100vh;
+  z-index: 999;
+  padding: 0px 10px;
+  width: 200px !important;
+  transition: width 0.2s cubic-bezier(0.39, 0.575, 0.565, 1);
+  will-change: width;
+}
+
 .header-left,
 .header-right {
   display: flex;
@@ -62,7 +74,7 @@
   width: 300px !important;
   box-shadow: 0 1px 6px #00000033;
   position: fixed;
-  border-radius: 10px; 
+  border-radius: 10px;
   top: 64px;
   right: 12px;
   animation: scaleZ 300ms ease-in-out forwards !important;
@@ -145,5 +157,3 @@
 
 
 /* /////// Side bar Css ////// */
-
-
