@@ -4,6 +4,8 @@ import { Navbar } from "react-bootstrap";
 import Profile from "./Profile";
 import { useSelector, useDispatch } from "react-redux";
 import { BiMenu, BiChevronDown, BiMenuAltLeft } from "react-icons/bi";
+import SearchBar from "../../component/ui/SearchBar/SearchBar";
+import { MdOutlineDarkMode } from "react-icons/md";
 // import productLogo from "../../assests/images/login/logo_api.png";
 // import { handleSidebar } from "../../redux/reducers/layout";
 
@@ -99,7 +101,7 @@ const Header = ({ setIsMenuBar, collapsed, toggleSidebar, width }: headerProps) 
             <BiMenuAltLeft />
           </div>
         )}
-        <div className="ml-auto d-flex align-items-center">
+        <div className="ml-auto d-flex gap-3 align-items-center">
           {/* <div
               className="header-icon mx-2 rounded-circle position-relative"
               onClick={() => setIsNotificationOpen(!isNotificationOpen)}
@@ -110,6 +112,11 @@ const Header = ({ setIsMenuBar, collapsed, toggleSidebar, width }: headerProps) 
                 <div className="bg-orange rounded-circle position-absolute text-xs d-flex justify-content-center align-items-center text-white" style={{ width: 15, height: 15, top: 0, right: 0 }}>{notificationData?.length}</div>
               }
             </div> */}
+          <SearchBar />
+          <div>
+            <MdOutlineDarkMode size={20} />
+          </div>
+
           <div
             onClick={() => setIsProfile(!isProfile)}
             ref={profileMenuIconRef}
@@ -118,11 +125,16 @@ const Header = ({ setIsMenuBar, collapsed, toggleSidebar, width }: headerProps) 
           >
             {/* {userProfile === null || userProfile === "" ? ( */}
             {/* <Image src='/imgaes/profile.png' alt="User" roundedCircle style={{ width: 40, aspectRatio: "2/2" }} /> */}
-            <div className="ProfileHeader-icon rounded-circle">Y</div>
+            {/* <div className="ProfileHeader-icon rounded-circle">Y</div>
             <div className="">
               <div className="text-sm fw-semibold">Admin</div>
               <div className="d-flex align-items-center gap-1">
                 <div className="status-indicate" style={{ backgroundColor: "#36B37E" }}></div>
+              </div>
+            </div> */}
+            <div style={{ fontSize: "10px", width: '120px' }} className="d-flex gap-2   align-items-center profile-media"><div className="ProfileHeader-icon rounded-circle">Y</div>
+              <div className="flex-grow-1"><span>Ava Davis</span>
+                <p className="mb-0">Web Designer</p>
               </div>
             </div>
             {/* // ) : <Image src={userProfile !== null ? userProfile : userData?.Photo} alt={userData?.FirstName} roundedCircle style={{ width: 40, aspectRatio: "2/2" }} />} */}
