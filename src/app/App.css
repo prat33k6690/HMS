@@ -297,35 +297,14 @@ a {
   color: var(--primaryColor);
 }
 
-/* a:hover{
-  background-position: right center;
-  color: var(--primaryColor) !important;
-  text-decoration: none;
-  background-color: var(--primaryColor75) !important;
-  border-color: var(--primaryColor75) !important;
-  margin-bottom: 5px;
-
-} */
-
-/* 
-.childMenuLink:hover{
-    background-position: right center;
-  color: var(--primaryColor) !important;
-  text-decoration: none;
-  background-color: var(--primaryColor75) !important;
-  border-color: var(--primaryColor75) !important;
-  margin-bottom: 5px;
-} */
+.breadcrumb-item + .breadcrumb-item::before {
+  content: ">";
+  color: #6c757d; 
+}
 
 td {
   font-size: 14px !important;
 }
-
-/* .textColor {
-  /* color: var(--primaryColor) !important;
-  margin: 0px !important;
-  font-weight: 600;
-} */ 
 
 .fontSize {
   font-size: 12px !important;

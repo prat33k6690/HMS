@@ -5,6 +5,7 @@ import Footer from "./footer/Footer";
 import Header from "./header/Header";
 import Sidebar from "./sidebar/index";
 import { Container } from "react-bootstrap";
+import Breadcrumbs from "../component/ui/Breadcrumbs";
 
 
 const defaultBreakpoints = {
@@ -64,6 +65,7 @@ const Layout: React.FC = () => {
               overflowY: "scroll",
             }}
         >
+          <Breadcrumbs />
           <Outlet />
         </div>
         <Footer />

@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { NavLink, useLocation } from "react-router-dom";
 import { useDispatch } from "react-redux";
-// import logo from '../../assests/images/logo.jpg';
-import logo from '../../assests/images/login/logo_api.png'
+import logo from '../../assests/images/logo.jpg';
 import './Sidebar.css'
 import { Icon } from "@iconify/react";
 import Sidebar from "./Sidebar";
@@ -71,7 +70,7 @@ const Navmenu: React.FC<NavmenuProps> = ({ menus }) => {
   return (
     <>
       <div className="mb-3">
-        <img className="w-50 mx-4 mt-2" src={logo} alt="image" />
+        <img className="w-60 mx-4 mt-2" src={logo} alt="image" />
       </div>
       <ul className="overflow-scroll h-95">
         {menus.map((item, i) => (
