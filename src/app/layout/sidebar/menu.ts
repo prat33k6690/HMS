@@ -1,8 +1,8 @@
 export const menuItems = [
-  {
-    isHeadr: true,
-    title: "menu",
-  },
+  // {
+  //   isHeadr: true,
+  //   title: "menu",
+  // },
 
   {
     title: "Dashboard",
@@ -17,7 +17,7 @@ export const menuItems = [
     child: [
       {
         childtitle: "Register Student",
-        childlink: "student/register",
+        childlink: "registerStudent",
         childicon: "heroicons-outline:user-add",
       },
       {
