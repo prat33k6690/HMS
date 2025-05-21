@@ -79,11 +79,11 @@ const Submenu: React.FC<SubmenuProps> = ({
               <NavLink to={subItem.childlink}>
                 {({ isActive }) => (
                   <div
-                    className={`d-flex align-items-center gap-2 text-sm ${isActive ? "fw-medium text-dark" : "text-muted"
+                    className={`d-flex align-items-center gap-2 text-sm ${isActive ? "fw-medium text-black" : "text-muted"
                       }`}
                   >
                     <span>
-                      <VscCircleFilled />
+                      <VscCircleFilled className={`d-flex align-items-center gap-2 text-sm ${isActive ? "fw-medium text-black" : "text-muted"}`} />
                     </span>
                     <span className="text-sm">{subItem.childtitle}</span>
                   </div>
