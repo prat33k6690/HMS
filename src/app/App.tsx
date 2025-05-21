@@ -73,7 +73,7 @@ function App() {
             <Route path="recharge" element={<Recharge />} />
             //Api Setup
             <Route path="Application" element={<Application />} />
-            <Route path="Subscribe" element={<Subscribe />} />
+            <Route path="student/register" element={<Subscribe />} />
             <Route path="APIApproval" element={<APIApproval />} />
             //KYC-Verification
             <Route path="KYC-Verification" element={<KYCVerification />} />

@@ -184,11 +184,15 @@ body.dark .item-has-children .parent_active .menu-arrow {
   color: #adaeb1;
 }
 
-.menu-item-active>.menu-icon img,
-svg {
-  color: #adaeb1;
+.menu-item-active .menu-icon img,
+.menu-item-active .menu-icon svg {
+  color: #b4bbc9 !important;
 }
 
+.menu-item-active:hover .menu-icon img,
+.menu-item-active:hover .menu-icon svg {
+  color: #475569 !important;
+}
 
 .menu-item-active>.menu-icon {
   color: #fff !important;
@@ -234,7 +238,7 @@ body.dark .menu-item-active>.menu-link {
 
 .menu-icon img,
 svg {
-  color: #475569;
+  color: #475569 !important;
 }
 
 .menu-arrow {
