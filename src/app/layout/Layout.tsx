@@ -59,7 +59,7 @@ const Layout: React.FC = () => {
           }  `}
       >
         <div
-          className={`Screens-Container position-relative hideScroll p-4 ${width <= 875 && "mx-2"
+          className={`Screens-Container position-relative hideScroll px-4 py-2 ${width <= 875 && "mx-2"
             } "screen-container-0 `} style={{
               height: "88vh",
               overflowY: "scroll",
