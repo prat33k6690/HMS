@@ -111,11 +111,6 @@ body.dark .item-has-children .menu-arrow {
   color: #cbd5e1;
 }
 
-body.dark .item-has-children .menu-arrow img,
-svg {
-  height: 16px;
-}
-
 /* COLLAPSE ANIMATION */
 .submenu_enter-active,
 .submenu_leave-active,
