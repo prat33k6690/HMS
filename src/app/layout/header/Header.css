@@ -71,11 +71,11 @@
 
 .profile-menu-section {
   background-color: var(--ComponentBgColor);
-  width: 300px !important;
-  box-shadow: 0 1px 6px #00000033;
+  box-shadow: 0 1px 6px #92929233;
+  /* width: 160px; */
   position: fixed;
-  border-radius: 10px;
-  top: 64px;
+  border-radius: 5px;
+  top: 0px;
   right: 12px;
   animation: scaleZ 300ms ease-in-out forwards !important;
   z-index: 999;
@@ -87,11 +87,11 @@
 .profile-menu-section,
 .filter-menu-section {
   background-color: var(--ComponentBgColor);
-  width: 300px;
-  box-shadow: 0 1px 6px #00000033;
+
+  box-shadow: 0 1px 6px #83838333;
   position: fixed;
-  border-radius: 10px;
-  top: 64px;
+  border-radius: 5px;
+  top: 50px;
   /* right: 12px; */
 
   animation: scaleZ 300ms ease-in-out forwards;

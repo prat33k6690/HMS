@@ -1,14 +1,16 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import { BiUser, BiLogOutCircle } from "react-icons/bi";
 import "./Header.css";
 import { useNavigate } from "react-router-dom";
+import { IoSettingsOutline } from "react-icons/io5";
+import { IoLogOutOutline } from "react-icons/io5"
+const Profile = ({ isProfile, profileRef, screenWidth }: any) => {
 
-const Profile = ({ isProfile, profileRef, screenWidth, setIsProfile }: any) => {
+
+
   const navigate = useNavigate();
 
   return (
-    <div>
+    <div >
       <div>
         {isProfile && (
           <div className={`${screenWidth >= 875 ? "" : "bg-sidebar"}`}></div>
@@ -18,46 +20,31 @@ const Profile = ({ isProfile, profileRef, screenWidth, setIsProfile }: any) => {
             }`}
           ref={profileRef}
         >
-          <div className="profile-details d-flex align-items-center">
-            {/* <div className="admin-img">
-                            <img src="/images/person-2.png" alt="User" className='ProfileMenu-img rounded-circle' />
-                        </div> */}
-            <div className="ProfileMenu-img rounded-circle">A</div>
-            <div className="ps-3">
-              <div className="fw-bold text-sm" style={{ lineHeight: 1 }}>
-                Admin
+          <ul style={{ fontSize: "13px" }} className="d-grid table-hover  align-items-center justify-content-center gap-2 mt-3 text-md fw-medium text-black text-muted">
+            <li className=" border-bottom  px-4 py-1 rounded cursor-pointer flex items-center gap-2 hover-effect">
+              <div style={{ fontSize: "10px", width: '120px' }} className="d-flex gap-2   align-items-center profile-media"><div className="ProfileHeader-icon rounded-circle"><img className="img-fluid w-70" src="https://admin.pixelstrap.net/miami/assets/images/dashboard/profile.png" alt="" /></div>
+                <div className="flex-grow-1"><span>Ava Davis</span>
+                  <p className="mb-0">Web Designer</p>
+                </div>
               </div>
-              <div
-                className="text-xs text-slate-500 mt-1"
-                style={{ lineHeight: 1 }}
-              >
-                Admin@gmail.com
-              </div>
-              <div
-                className="text-xs text-slate-500 mt-1"
-                style={{ lineHeight: 1 }}
-              >
-                Role : Admin
-              </div>
-            </div>
-          </div>
+            </li>
+            <li className=" mt-1 px-4 py-1 rounded cursor-pointer flex items-center hover-effect gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-user">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                <circle cx="12" cy="7" r="4"></circle>
+              </svg>
+              Profile
+            </li>
+            <li className="  px-4 py-1 rounded cursor-pointer flex items-center gap-2 hover-effect">
+              <IoSettingsOutline size={24} className="fw-bolder" />
+              Setting
+            </li>
+            <li className="  px-4 py-1 rounded cursor-pointer flex items-center gap-2 hover-effect">
+              <IoLogOutOutline size={24} className="fw-bolder" />
+              Log Out
+            </li>
+          </ul>
 
-          <hr className="my-0" />
-
-          <div>
-            <Link
-              className="profile-menu"
-              to="/profile"
-              onClick={() => setIsProfile(false)}
-            >
-              <BiUser className="text-slate-700" />
-              <div className="ms-2">Profile</div>
-            </Link>
-            <div className="profile-menu" onClick={() => navigate("/")}>
-              <BiLogOutCircle className="text-danger" />
-              <div className="ms-2 text-danger">Log Out</div>
-            </div>
-          </div>
         </div>
       </div>
     </div>
