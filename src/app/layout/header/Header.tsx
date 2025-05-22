@@ -6,6 +6,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { BiMenu, BiChevronDown, BiMenuAltLeft } from "react-icons/bi";
 import SearchBar from "../../component/ui/SearchBar/SearchBar";
 import { MdOutlineDarkMode } from "react-icons/md";
+import { RiFullscreenFill } from "react-icons/ri";
 // import productLogo from "../../assests/images/login/logo_api.png";
 // import { handleSidebar } from "../../redux/reducers/layout";
 
@@ -90,6 +91,36 @@ const Header = ({ setIsMenuBar, collapsed, toggleSidebar, width }: headerProps) 
   const bankLogo = useSelector((state: any) => state.layout.bankLogo);
   const dispatch = useDispatch();
 
+  // full screen function
+  useEffect(() => {
+    const handleKeyDown = (event: any) => {
+      if (event.key === 'F11') {
+        event.preventDefault();
+        handleFullscreenToggle();
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, []);
+
+  const handleFullscreenToggle = () => {
+    const elem = document.documentElement;
+
+    if (!document.fullscreenElement) {
+      elem.requestFullscreen().catch((err) => {
+        console.error(`Error attempting to enable fullscreen: ${err.message}`);
+      });
+    } else {
+      document.exitFullscreen();
+    }
+  };
+  //end
+
+
   return (
     <>
       <Navbar
@@ -116,6 +147,7 @@ const Header = ({ setIsMenuBar, collapsed, toggleSidebar, width }: headerProps) 
           <div>
             <MdOutlineDarkMode size={20} />
           </div>
+          <RiFullscreenFill size={30} onClick={handleFullscreenToggle} style={{ cursor: "pointer" }} />
 
           <div
             onClick={() => setIsProfile(!isProfile)}
