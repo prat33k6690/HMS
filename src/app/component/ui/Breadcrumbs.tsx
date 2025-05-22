@@ -43,11 +43,11 @@ const Breadcrumbs: React.FC = () => {
     return (
         <>
             {!isHide ? (
-                <nav aria-label="breadcrumb" className="mb-4">
+                <nav aria-label="breadcrumb">
                     <ol className="breadcrumb justify-content-end align-items-center">
                         <li className="breadcrumb-item">
-                            <NavLink to="/dashboard" className="text-decoration-none">
-                                <Icon icon="heroicons-outline:home" />
+                            <NavLink to="/dashboard" className="text-decoration-none mb-1">
+                                <Icon icon="heroicons-outline:home" style={{marginBottom:"4px"}} />
                             </NavLink>
                         </li>
 
