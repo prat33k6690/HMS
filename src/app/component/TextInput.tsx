@@ -1,8 +1,8 @@
-import React, { ChangeEventHandler } from "react";
+import React, { ChangeEventHandler, FocusEventHandler, KeyboardEventHandler } from "react";
 import "./Textfield.css";
 import { Form } from "react-bootstrap";
 
-interface props {
+interface Props {
   label?: string;
   type?: string;
   name?: string;
@@ -10,14 +10,14 @@ interface props {
   required?: boolean;
   IconProp?: any;
   className?: string;
-  size?: "sm" | "lg" | undefined;
+  size?: "sm" | "lg";
   placeholder?: string;
-  style?: {};
+  style?: React.CSSProperties;
   width?: string;
   value?: any;
   onChange?: ChangeEventHandler<HTMLInputElement>;
-  onBlur?: any;
-  onKeyDown?: any;
+  onBlur?: FocusEventHandler<HTMLInputElement>;
+  onKeyDown?: KeyboardEventHandler<HTMLInputElement>;
   readOnly?: boolean;
   minLength?: number;
   maxLength?: number;
@@ -27,14 +27,17 @@ interface props {
   disabled?: boolean;
   tabIndex?: number;
   step?: number;
-  onFocus?: any;
-  pattern?: any;
+  onFocus?: FocusEventHandler<HTMLInputElement>;
+  pattern?: string;
   autoFocus?: boolean;
+  feedback?: string;
+  isValid?: boolean;
+  isInvalid?: boolean;
 }
 
 const Textfield = ({
   label,
-  type,
+  type = "text",
   name,
   id,
   required,
@@ -59,25 +62,23 @@ const Textfield = ({
   step,
   onFocus,
   autoFocus,
-  pattern
-}: props) => {
+  pattern,
+  feedback,
+  isValid,
+  isInvalid,
+}: Props) => {
   return (
-    <div className="textfield" style={{ width: width }}>
-      <div className="material-textfield mt-1">
-        {label && (
-          <label
-            htmlFor={id}
-            className={`text-slate-500 text-xs ${required ? "required" : ""}`}
-          >
-            {label}
-          </label>
-        )}
+    <Form.Group className={`textfield ${className || ""}`} style={{ width }} controlId={id}>
+      {label && (
+        <Form.Label className="text-slate-500 text-xs">
+          {label} {required && <span className="text-danger">*</span>}
+        </Form.Label>
+      )}
 
+      <div className="material-textfield mt-1" style={{ position: "relative" }}>
         <Form.Control
-          placeholder={placeholder ? placeholder : ""}
-          type={type ? type : "text"}
-          className={`${IconProp ? "paddingforIcon-sm" : ""} ${className}`}
-          style={{ ...style, height: "35px" }}
+          type={type}
+          placeholder={placeholder}
           size={size}
           name={name}
           id={id}
@@ -99,25 +100,23 @@ const Textfield = ({
           disabled={disabled}
           autoComplete="off"
           step={step}
+          style={{ ...style, height: "35px", paddingLeft: IconProp ? "30px" : undefined }}
+          isValid={isValid}
+          isInvalid={isInvalid}
         />
-
-        {/* {IconProp && (
-          <div className="form-icon">
-            <i
-              className={`${IconProp} text-slate-700 `}
-              style={{ fontSize: 13 }}
-              aria-hidden="true"
-            ></i>
-          </div>
-        )} */}
-
         {IconProp && (
-          <div className="form-icon">
+          <div className="form-icon" style={{ position: "absolute", top: "50%", left: "8px", transform: "translateY(-50%)" }}>
             <IconProp className="text-slate-700" />
           </div>
         )}
       </div>
-    </div>
+
+      {feedback && (
+        <Form.Control.Feedback type={isInvalid ? "invalid" : "valid"}>
+          {feedback}
+        </Form.Control.Feedback>
+      )}
+    </Form.Group>
   );
 };
 

@@ -764,14 +764,22 @@ html[dir="rtl"] .recharts-yAxis .recharts-text {
 #searchQuerySubmit:hover {
   cursor: pointer;
 }
-::placeholder
-{
+input::placeholder {
   font-size: 12px !important;
+  color: #9b9b9b;
 }
-
 
 .hover-effect:hover {
   background-color: #f8f9fa; 
   cursor: pointer;
+}
+.css-1w23itg-placeholder
+{
+  font-size: 12px !important;
+}
+.borderForm
+{
+  border: 1px dotted #c2c2c2 ;
+  border-radius: 8px;
 }
 
