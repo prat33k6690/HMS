@@ -2,9 +2,6 @@ import React, { useState } from 'react'
 import WelcomeWidget from '../../component/ui/Widget/WelcomeCard'
 import GroupChart1 from '../../component/ui/Widget/GroupCharts'
 import EarningChart from '../../component/ui/Widget/EarningChart'
-import { Calendar } from 'primereact/calendar';
-
-const [date, setDate] = useState<Date | null>(null); // Add this line
 
 function Dashboard() {
   return (
@@ -28,12 +25,7 @@ function Dashboard() {
           </div>
         </div>
         <div className="col-12 col-lg-12 col-xxl-8">
-          <Calendar
-            value={date}                   
-            onChange={(e) => setDate(e.value as Date)}
-            inline
-            showWeek
-          />
+
 
         </div>
       </div>
