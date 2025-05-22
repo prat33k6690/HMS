@@ -783,3 +783,7 @@ input::placeholder {
   border-radius: 8px;
 }
 
+body.dark .item-has-children .menu-arrow img,
+svg {
+  height: 16px;
+}
