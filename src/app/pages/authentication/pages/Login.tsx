@@ -41,7 +41,6 @@ const Login = () => {
           }}
           validationSchema={LoginSchema}
           onSubmit={(values) => {
-            // Placeholder submit
             console.log("Submitted:", values);
           }}
         >
@@ -154,7 +153,6 @@ const Login = () => {
                     <ErrorMessage name="captcha" className="error-msg" component="div" />
                   </Col>
                 </Row>
-
                 <div className="mt-4">
                   <Button
                     type="submit"

@@ -1,8 +1,6 @@
+import meetsImage from '../../assests/images/sk.svg'
+
 export const menuItems = [
-  // {
-  //   isHeadr: true,
-  //   title: "menu",
-  // },
 
   {
     title: "Dashboard",
@@ -299,5 +297,33 @@ export const menuItems = [
     title: "Logout",
     icon: "heroicons-outline:logout",
     link: "/",
+  },
+];
+
+
+export const meets = [
+  {
+    img: meetsImage,
+    title: "Meeting with client",
+    date: "01 Nov 2021",
+    meet: "Zoom meeting",
+  },
+  {
+    img: meetsImage,
+    title: "Design meeting (team)",
+    date: "01 Nov 2021",
+    meet: "Skyp meeting",
+  },
+  {
+    img: meetsImage,
+    title: "Background research",
+    date: "01 Nov 2021",
+    meet: "Google meeting",
+  },
+  {
+    img: meetsImage,
+    title: "Meeting with client",
+    date: "01 Nov 2021",
+    meet: "Zoom meeting",
   },
 ];

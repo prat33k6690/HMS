@@ -110,7 +110,7 @@ const Header = ({ toggleSidebar, width }: headerProps) => {
             className="profile-icon d-flex align-items-center gap-2 pe-3"
           >
             <div style={{ fontSize: "10px", width: '120px' }} className="d-flex gap-2 align-items-center profile-media"><div className="ProfileHeader-icon rounded-circle"><img src="https://admin.pixelstrap.net/miami/assets/images/dashboard/profile.png" alt="" /></div>
-              <div className="flex-grow-1"><span>Ava Davis</span>
+              <div className="flex-grow-1"><span>Tilak Kumar</span>
                 <p className="mb-0">Web Designer</p>
               </div>
             </div>
