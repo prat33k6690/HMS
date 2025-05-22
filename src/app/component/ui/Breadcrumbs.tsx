@@ -33,6 +33,7 @@ const Breadcrumbs: React.FC = () => {
 
         if (currentMenuItem) {
             setIsHide(currentMenuItem.isHide ?? false);
+            setGroupTitle("");
         } else if (currentChild) {
             setIsHide(currentChild.isHide ?? false);
             setGroupTitle(currentChild.title);
@@ -43,7 +44,7 @@ const Breadcrumbs: React.FC = () => {
         <>
             {!isHide ? (
                 <nav aria-label="breadcrumb" className="mb-4">
-                    <ol className="breadcrumb justify-content-end">
+                    <ol className="breadcrumb justify-content-end align-items-center">
                         <li className="breadcrumb-item">
                             <NavLink to="/dashboard" className="text-decoration-none">
                                 <Icon icon="heroicons-outline:home" />
@@ -51,8 +52,8 @@ const Breadcrumbs: React.FC = () => {
                         </li>
 
                         {groupTitle && (
-                            <li className="breadcrumb-item text-capitalize"style={{fontSize:"12px"}}>
-                                <button type="button" className="btn btn-link m-0 p-0 text-decoration-none" style={{ fontSize: "12px" }}>
+                            <li className="breadcrumb-item text-capitalize text-muted" style={{ fontSize: "12px" }}>
+                                <button type="button" className="btn btn-link m-0 p-0 text-decoration-none text-muted" style={{ fontSize: "12px" }}>
                                     {groupTitle}
                                 </button>
                             </li>
