@@ -11,7 +11,7 @@ function Dashboard() {
       <WelcomeWidget />
     </div>
     <div className="col-12 col-lg-8 col-xxl-9">
-      <div className="card p-3">
+      <div className="card p-3 border-none">
         <div className="row g-3">
           <GroupChart1 />
         </div>

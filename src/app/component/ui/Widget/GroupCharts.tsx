@@ -25,7 +25,7 @@ const baseOptions: ApexOptions = {
         offsetY: 0,
         zoom: { enabled: false },
         sparkline: { enabled: true },
-        animations: { enabled: false },
+        animations: { enabled: true },
     },
     dataLabels: { enabled: false },
     stroke: { curve: "smooth", width: 2 },
@@ -78,45 +78,42 @@ const statistics: StatisticItem[] = [
         name: shapeLine1,
         title: "Present Students",
         count: "564",
-        bg: "bg-[#E5F9FF] dark:bg-slate-900",
+        bg: "#E5F9FF",
     },
     {
         name: shapeLine2,
         title: "Absent Students",
         count: "54",
-        bg: "bg-[#FFEDE5] dark:bg-slate-900",
+        bg: "#FFEDE5",
     },
     {
         name: shapeLine3,
         title: "Total Students",
         count: "624",
-        bg: "bg-[#EAE5FF] dark:bg-slate-900",
+        bg: "#EAE5FF",
     },
 ];
+
 
 const GroupChart1: React.FC = () => {
     return (
         <>
             {statistics.map((item, i) => (
                 <div className="col-12 col-md-4" key={i}>
-                    <div className={`py-3 px-4 rounded-2 ${item.bg}`}>
+                    <div className="py-3 px-4 rounded-2" style={{ backgroundColor: item.bg }}>
                         <div className="d-flex align-items-center gap-3">
                             <div className="flex-shrink-0">
                                 <Chart
                                     options={item.name.options}
                                     series={item.name.series}
                                     type="area"
-                                    height={48}
-                                    width={48}
+                                    height={60}
+                                    width={60}
                                 />
                             </div>
                             <div className="flex-grow-1">
-                                <div className="text-dark fw-medium mb-1 small">
-                                    {item.title}
-                                </div>
-                                <div className="fs-5 fw-semibold text-dark">
-                                    {item.count}
-                                </div>
+                                <div className="text-dark fw-medium mb-1 small">{item.title}</div>
+                                <div className="fs-5 fw-semibold text-dark">{item.count}</div>
                             </div>
                         </div>
                     </div>

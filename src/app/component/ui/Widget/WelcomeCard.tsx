@@ -8,15 +8,15 @@ const WelcomeWidget = () => {
                 backgroundImage: `url(${Image2})`,
                 backgroundRepeat: "no-repeat",
                 backgroundSize: "cover",
-                backgroundPosition: "center",
+                minHeight:"136px"
             }}
         >
             <div>
                 <h4 className="text-xl font-medium text-white mb-2">
                     <span className="d-block fw-normal">Good evening,</span>
-                    <span className="d-block">Mr. Dianne Russell</span>
+                    <span className="d-block">Mr. Tilak Kumar</span>
                 </h4>
-                <p className="text-sm text-white fw-normal">Welcome to Dashcode</p>
+                <p className="text-sm text-white fw-normal">Welcome to Hostel Management System</p>
             </div>
         </div>
     );
