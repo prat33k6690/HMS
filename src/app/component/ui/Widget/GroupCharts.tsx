@@ -99,7 +99,7 @@ const GroupChart1: React.FC = () => {
     return (
         <>
             {statistics.map((item, i) => (
-                <div className="col-12 col-md-4" key={i}>
+                <div className="col-12 col-md-4 border-0" key={i}>
                     <div className="py-3 px-4 rounded-2" style={{ backgroundColor: item.bg }}>
                         <div className="d-flex align-items-center gap-3">
                             <div className="flex-shrink-0">
@@ -112,7 +112,7 @@ const GroupChart1: React.FC = () => {
                                 />
                             </div>
                             <div className="flex-grow-1">
-                                <div className="text-dark fw-medium mb-1 small">{item.title}</div>
+                                <div className="text-dark fw-medium mb-1 small pt-2">{item.title}</div>
                                 <div className="fs-5 fw-semibold text-dark">{item.count}</div>
                             </div>
                         </div>

@@ -62,8 +62,8 @@ const EarningChart: React.FC<EarningChartProps> = ({
         <div className={className}>
             <div className="d-flex align-items-center justify-content-between">
                 <div className="me-3">
-                    <div className="text-muted small mb-1">Earnings</div>
-                    <div className="h5 mb-1 text-dark">$12,335.00</div>
+                    <div className="text-muted small mb-1">Room Occupancy</div>
+                    <div className="h5 mb-1 text-dark">13 / 30</div>
                     <div className="text-muted small">
                         <span className="text-success fw-semibold">+08%</span> From last week
                     </div>
