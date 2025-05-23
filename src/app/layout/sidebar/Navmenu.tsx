@@ -126,6 +126,7 @@ const Navmenu: React.FC<NavmenuProps> = ({ menus }) => {
             <Sidebar activeSubmenu={activeSubmenu} item={item} i={i} isMenuBar={false} setIsMenuBar={function (value: React.SetStateAction<boolean>): void {
               throw new Error("Function not implemented.");
             }} />
+
           </li>
         ))}
       </ul>

@@ -1,8 +1,6 @@
 import React from 'react'
 import { Datatable } from '../../component/dataTable/Datatable'
 import { Button } from 'react-bootstrap'
-import { BiEditAlt, BiTrash } from 'react-icons/bi';
-import { TbTemplate } from 'react-icons/tb';
 
 const columns = [
     {
@@ -51,7 +49,7 @@ interface StudentTableProps {
 }
 const StudentTable: React.FC<StudentTableProps> = ({ data, handleDeleteRecord, handleEditableData, SetShow, Show }) => {
     return (
-        <div className='bg-white p-3'  >
+        <div className='bg-white p-3 rounded-1'>
             <div className='d-flex justify-content-between'>
                 <div>
                     <p className="fw-medium m-0 h6 ">

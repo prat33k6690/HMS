@@ -28,7 +28,7 @@ const StudentTable: React.FC = () => {
                 <table className="table table-hover align-middle">
                     <thead className="table-light">
                         <tr>
-                            <th className="text-md">Student Name</th>
+                            <th className="text-md ">Student Name</th>
                             <th className="text-md">From Date</th>
                             <th className="text-md">To Date</th>
                             <th className="text-md">Contact Details</th>

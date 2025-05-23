@@ -158,9 +158,7 @@ export const Datatable: React.FC<dataProps> = ({
                           onClick={() =>
                             column.sorting && handleSort(column.field)
                           }
-                          className="p-2 text-sm text-center  "
-
-                        >
+                          className="p-2 text-sm text-center  " >
                           <div
                             className={`d-flex ${column.align === "center"
                               ? "justify-content-center "
