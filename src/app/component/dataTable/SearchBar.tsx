@@ -31,30 +31,30 @@ const SearchBar = ({ searchTerm, setSearchTerm }: searchBarProps) => {
     //   </div>
     // </div>
     <div style={{ position: "relative", maxWidth: 400 }}>
-    <CiSearch
-      style={{
-        position: "absolute",
-        top: "50%",
-        left: "10px",
-        transform: "translateY(-50%)",
-        fontSize: "1.15rem",
-        color: "#6c757d",
-        pointerEvents: "none",
-      }}
-    />
-    <Form.Control
-      type="text"
-      placeholder="Search…"
-      value={searchTerm}
-      onChange={(e: any) => setSearchTerm(e.target.value)}
-      style={{
-        paddingLeft: "2.2rem",
-        height: "30px",
-        fontSize: "13px",
-        boxShadow: "none",
-      }}
-    />
-  </div>
+      <CiSearch
+        style={{
+          position: "absolute",
+          top: "50%",
+          left: "10px",
+          transform: "translateY(-50%)",
+          fontSize: "1.15rem",
+          color: "#6c757d",
+          pointerEvents: "none",
+        }}
+      />
+      <Form.Control
+        type="text"
+        placeholder="Search…"
+        value={searchTerm}
+        onChange={(e: any) => setSearchTerm(e.target.value)}
+        style={{
+          paddingLeft: "2.2rem",
+          height: "30px",
+          fontSize: "13px",
+          boxShadow: "none",
+        }}
+      />
+    </div>
   );
 };
 
