@@ -142,7 +142,7 @@ export const Datatable: React.FC<dataProps> = ({
             <div className=" border rounded  mt-3">
               <Table hover responsive size="sm" className="mb-2 text-nowrap data-table">
                 <thead>
-                  <tr className="tableheader  fw-medium text-secondary ps-2 ">
+                  <tr className="  fw-medium text-secondary ps-2 ">
                     {checkbox && (
                       <th className="p-2" style={{ fontSize: "12px", whiteSpace: "nowrap", zIndex: "2" }}>
                         <div className="d-flex justify-content-center ms-1">

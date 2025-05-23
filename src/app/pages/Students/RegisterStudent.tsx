@@ -8,6 +8,7 @@ import { Button } from 'react-bootstrap';
 import { useState } from 'react';
 import StudentTable from '../../content/Table/StudentTable';
 const data = [
+
   {
     TemplateName: "TICKET SMS TERM",
     TemplateType: "Mail",
