@@ -63,18 +63,9 @@ const Layout = ({ children, title }: any) => {
                   </Row>
 
                   <div className="">
-                    <p className="text-xs text-center mb-0">
-                      Developed by{" "}
-                      <Link to="https://suretytelco.com/" target="_blank">
-                        SURETY-TELCO
-                      </Link>{" "}
-                      | Sales by{" "}
-                      <Link
-                        to="https://soft-techsolutions.com/"
-                        target="_blank"
-                      >
-                        SOFT-TECH SOLUTION
-                      </Link>{" "}
+                    <p className="text-xs text-center mb-0"> Developed by{" "}
+                      <Link to="https://suretytelco.com/" target="_blank"> SURETY-TELCO </Link>{" "}| Sales by{" "}
+                      <Link to="https://soft-techsolutions.com/" target="_blank"> SOFT-TECH SOLUTION</Link>{" "}
                     </p>
                     <p className="text-xs text-center mb-1">
                       Copyrights © 2014 - {new Date().getFullYear()} | All Right
