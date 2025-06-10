@@ -176,10 +176,15 @@ button:disabled {
 
 
 .text-xs {
-  font-size: 0.7rem;
+  font-size: 0.6rem;  
+  font-weight: 600;
   /*  (12px) */
   line-height: calc(1 / 0.75);
   /*  */
+}
+
+.text-muted{
+  color: rgb(112, 112, 112) !important;
 }
 
 .text-sm {
@@ -332,7 +337,7 @@ text-primarys {
 /* ////// //////  //// */
 
 .error-msg {
-  font-size: 12px !important;
+  font-size: 10px !important;
   color: var(--dangerColor) !important;
   margin-bottom: 0 !important;
 }

@@ -100,12 +100,12 @@ const Textfield = ({
           disabled={disabled}
           autoComplete="off"
           step={step}
-          style={{ ...style, height: "35px", paddingLeft: IconProp ? "30px" : undefined }}
+          style={{ ...style, height: "38px", paddingLeft: IconProp ? "35px" : undefined }}
           isValid={isValid}
           isInvalid={isInvalid}
         />
         {IconProp && (
-          <div className="form-icon" style={{ position: "absolute", top: "50%", left: "8px", transform: "translateY(-50%)" }}>
+          <div className="form-icon" style={{ position: "absolute", top: "50%", left: "12px", transform: "translateY(-50%)" }}>
             <IconProp className="text-slate-700" />
           </div>
         )}

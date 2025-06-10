@@ -13,12 +13,12 @@ import { AiOutlineBank } from "react-icons/ai";
 import { CgProfile } from "react-icons/cg";
 import { TbLockPassword } from "react-icons/tb";
 import { BiLoader, BiRefresh } from "react-icons/bi";
+import CustomButton from "../../../component/ui/CustomButton/CustomButton";
 
 const LoginLayout = lazy(() => import("../layout/Layout"));
 
 const Login = () => {
   const [isLoading, setIsLoading] = useState(false);
-  const [isCaptchaLoader, setIsCaptchaLoader] = useState(false);
 
   const LoginSchema = Yup.object().shape({
     clientId: Yup.number()
@@ -31,7 +31,8 @@ const Login = () => {
 
   return (
     <Suspense>
-      <LoginLayout title="Login">
+      <LoginLayout title="Login Into Your Account">
+        <p className="text-xs text-muted text-center">Welcome back ! Please enter your details</p>
         <Formik
           initialValues={{
             clientId: "",
@@ -45,7 +46,7 @@ const Login = () => {
           }}
         >
           {({ values, setFieldValue, handleBlur, handleChange }) => (
-            <Form>
+            <Form className="p-3">
               <div className="mt-2">
                 <TextField
                   label="Client Id"
@@ -103,70 +104,16 @@ const Login = () => {
                 <ErrorMessage name="password" component="div" className="error-msg" />
 
                 <div className="d-flex justify-content-end mt-2">
-                  <Link to="/forgotpwd" className="text-end btn-secondary me-1" style={{ fontSize: "12px" }}>
+                  <Link to="/forgotpwd" className="text-end text-xs btn-secondary me-1" >
                     Forgot password?
                   </Link>
                 </div>
-
-                <Row>
-                  <Col xs={6}>
-                    <div className="d-flex mt-4">
-                      <div className="form-control form-control-sm p-1 capcha-input"
-                        style={{
-                          borderTopRightRadius: 0,
-                          borderBottomRightRadius: 0,
-                          backgroundColor: "#f0f0f0",
-                          height: 35,
-                        }}
-                      >
-                        {/* Placeholder captcha image */}
-                        <img src={"captcha-placeholder.png"} alt="captcha" className="w-100 h-100" />
-                      </div>
-                      <Button
-                        variant="primary"
-                        disabled={isCaptchaLoader}
-                        type="button"
-                        className="btn-sm"
-                        style={{ borderTopLeftRadius: 0, borderBottomLeftRadius: 0 }}
-                      >
-                        {isCaptchaLoader ? (
-                          <BiLoader className="bx-spin text-white text-lg" />
-                        ) : (
-                          <BiRefresh className="text-white text-lg" />
-                        )}
-                      </Button>
-                    </div>
-                  </Col>
-                  <Col xs={6}>
-                    <TextField
-                      label="Captcha"
-                      name="captcha"
-                      id="captcha"
-                      placeholder="Captcha"
-                      maxLength={7}
-                      required
-                      disabled={isLoading}
-                      value={values.captcha}
-                      onChange={handleChange}
-                      onBlur={handleBlur}
-                    />
-                    <ErrorMessage name="captcha" className="error-msg" component="div" />
-                  </Col>
-                </Row>
                 <div className="mt-4">
-                  <Button
-                    type="submit"
-                    variant="primary"
-                    className="w-100"
-                    disabled={isLoading}
-                  >
-                    {!isLoading ? "Login" : (
-                      <>
-                        <BiLoader className="bx-spin text-white text-lg me-2" />
-                        Loading...
-                      </>
-                    )}
-                  </Button>
+                  <CustomButton
+                    text={!isLoading ? "LOGIN" : (<><BiLoader className="bx-spin text-white text-lg me-2" />LOADING...</>)}
+                    variant="danger"
+                    className="w-100 py-2"
+                    disabled={isLoading} />
                 </div>
               </div>
             </Form>
