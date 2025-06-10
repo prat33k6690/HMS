@@ -19,9 +19,9 @@ const Layout = ({ children, title }: any) => {
             className="h-100 rounded-3 border-1"
             style={{ minHeight: "100vh" }}
           >
-            <Col lg={6} className="bg-dark">
+            <Col lg={6} className="d-flex align-items-center justify-content-center bg-white">
               {" "}
-              <p className="text-white ">dsfsdfsdf</p>
+              <p className="text-white ps-4"><img src="https://img.freepik.com/free-photo/3d-render-secure-login-password-illustration_107791-16640.jpg" alt="" /></p>
             </Col>
 
             <Col
@@ -29,9 +29,8 @@ const Layout = ({ children, title }: any) => {
               className="d-flex justify-content-center align-items-center bg-white"
             >
               <Card
-                className={`${
-                  screenWidth < 600 ? "w-100 h-100 border-0" : "border-0"
-                }`}
+                className={`${screenWidth < 600 ? "w-100 h-100 border-0 me-3" : "border-0"
+                  }`}
                 style={{ width: "50%" }}
               >
                 <Card.Body
@@ -62,11 +61,7 @@ const Layout = ({ children, title }: any) => {
                       {children}
                     </div>
                   </Row>
-                  <hr />
-                  <div className="mb-0 text-xs text-slate-700 text-center mt-2">
-                    <strong>Contact Us</strong> : <BiPhone /> +91-9727788331 |{" "}
-                    <BiEnvelope /> contact@soft-techsolutions.com
-                  </div>
+
                   <div className="">
                     <p className="text-xs text-center mb-0">
                       Developed by{" "}
@@ -80,9 +75,6 @@ const Layout = ({ children, title }: any) => {
                       >
                         SOFT-TECH SOLUTION
                       </Link>{" "}
-                      {/* Copyrights © 2014 - {new Date().getFullYear()}
-                  {" "} | {" "}
-                  All Right Reserved */}
                     </p>
                     <p className="text-xs text-center mb-1">
                       Copyrights © 2014 - {new Date().getFullYear()} | All Right

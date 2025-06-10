@@ -5,6 +5,7 @@
 
 import React, { lazy, Suspense, useState } from "react";
 import { Formik, Form, ErrorMessage } from "formik";
+import { FcGoogle } from "react-icons/fc";
 import * as Yup from "yup";
 import { Link } from "react-router-dom";
 import TextField from "../../../component/TextInput";
@@ -46,7 +47,7 @@ const Login = () => {
           }}
         >
           {({ values, setFieldValue, handleBlur, handleChange }) => (
-            <Form className="p-3">
+            <Form className="p-3 ">
               <div className="mt-2">
                 <TextField
                   label="Client Id"
@@ -112,9 +113,15 @@ const Login = () => {
                   <CustomButton
                     text={!isLoading ? "LOGIN" : (<><BiLoader className="bx-spin text-white text-lg me-2" />LOADING...</>)}
                     variant="danger"
-                    className="w-100 py-2"
+                    className="w-100 py-2 mb-2"
                     disabled={isLoading} />
                 </div>
+                <CustomButton
+                  variant="transparent"
+                  text={!isLoading ? "Sign in with Google" : (<><BiLoader className="bx-spin text-white text-lg me-2" />LOADING...</>)}
+                  icon={FcGoogle}
+                  className="w-100 py-2 text-dark border"
+                  disabled={isLoading} />
               </div>
             </Form>
           )}
