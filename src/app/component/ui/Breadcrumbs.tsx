@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useLocation, NavLink } from "react-router-dom";
 import { menuItems } from "../../layout/sidebar/menu";
-// import Icon from "@/components/ui/Icon";
 import { Icon } from "@iconify/react";
 
 interface MenuItem {
@@ -47,7 +46,7 @@ const Breadcrumbs: React.FC = () => {
                     <ol className="breadcrumb justify-content-end align-items-center">
                         <li className="breadcrumb-item">
                             <NavLink to="/dashboard" className="text-decoration-none mb-1">
-                                <Icon icon="heroicons-outline:home" style={{marginBottom:"4px"}} />
+                                <Icon icon="heroicons-outline:home" style={{ marginBottom: "4px" }} />
                             </NavLink>
                         </li>
 
